@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const mongoose = require('mongoose');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -11,5 +12,13 @@ app.use(express.urlencoded({ extended: true }));
 // Use API routes from the api folder
 const apis = require('./api');
 app.use('/api', apis);
+
+mongoose
+  .connect(process.env.DB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log('mongo connected...'))
+  .catch((err) => console.log(err));
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
