@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  width: 100vw;
+}
+
+label {
+  display: block;
+  margin: 2rem;
+}
+
+textarea {
+  display: block;
+}
+
+button {
+  margin: 2rem;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: rgba(12, 11, 11, 0.756);
+  background-color: blanchedalmond;
+}
